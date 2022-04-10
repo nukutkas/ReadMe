@@ -9,13 +9,16 @@ import SwiftUI
 
 struct TitleAndAuthorStack: View {
     let book: Book
+    let titleFont: Font
+    let authorFont: Font
+    
     
     var body: some View {
         VStack(alignment: .leading) {
             Text(book.title)
-                .font(.title2)
+                .font(titleFont)
             Text(book.author)
-                .font(.title3)
+                .font(authorFont)
                 .foregroundColor(.secondary)
         }
     }
@@ -24,6 +27,7 @@ struct TitleAndAuthorStack: View {
 extension Book {
     struct Image: View {
         let title: String
+        var size: CGFloat?
         
         var body: some View {
             let symbol =
@@ -33,7 +37,7 @@ extension Book {
             symbol
                 .resizable()
                 .scaledToFit()
-                .frame(width: 80, height: 80)
+                .frame(width: size, height: size)
                 .font(Font.title.weight(.light))
                 .foregroundColor(.secondary.opacity(0.5))
         }
@@ -43,8 +47,8 @@ extension Book {
 extension Image {
     init?(title: String) {
         guard let character = title.first,
-        case let symbolName = "\(character.lowercased()).square", UIImage(systemName: symbolName) != nil else {
-                  
+              case let symbolName = "\(character.lowercased()).square", UIImage(systemName: symbolName) != nil else {
+            
             return nil
         }
         
