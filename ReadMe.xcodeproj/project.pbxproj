@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E50ECE2828031357003C6929 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50ECE2728031357003C6929 /* Library.swift */; };
 		E5DDFEAE2800B3DF00367605 /* ReadMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DDFEAD2800B3DF00367605 /* ReadMeApp.swift */; };
 		E5DDFEB02800B3DF00367605 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DDFEAF2800B3DF00367605 /* ContentView.swift */; };
 		E5DDFEB22800B3E400367605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5DDFEB12800B3E400367605 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E50ECE2728031357003C6929 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		E5DDFEAA2800B3DF00367605 /* ReadMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DDFEAD2800B3DF00367605 /* ReadMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeApp.swift; sourceTree = "<group>"; };
 		E5DDFEAF2800B3DF00367605 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				E5DDFEAD2800B3DF00367605 /* ReadMeApp.swift */,
+				E50ECE2728031357003C6929 /* Library.swift */,
 				E5DDFEBD2800B99C00367605 /* Views */,
 				E5DDFEBB2800B86500367605 /* Book.swift */,
 				E5DDFEB12800B3E400367605 /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 			files = (
 				E5DDFEBF2800B9CC00367605 /* Book views.swift in Sources */,
 				E5DDFEB02800B3DF00367605 /* ContentView.swift in Sources */,
+				E50ECE2828031357003C6929 /* Library.swift in Sources */,
 				E5DDFEAE2800B3DF00367605 /* ReadMeApp.swift in Sources */,
 				E5DDFEBC2800B86500367605 /* Book.swift in Sources */,
 			);
