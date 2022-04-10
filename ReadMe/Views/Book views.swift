@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct TitleAndAuthorStack: View {
+    let book: Book
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(book.title)
+                .font(.title2)
+            Text(book.author)
+                .font(.title3)
+                .foregroundColor(.secondary)
+        }
+    }
+}
+
 extension Book {
     struct Image: View {
         let title: String
