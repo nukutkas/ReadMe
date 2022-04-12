@@ -5,14 +5,13 @@
 //  Created by Татьяна Кочетова on 08.04.2022.
 //
 
-import SwiftUI
+import Combine
 
-
-struct Book: Hashable {
+class Book: ObservableObject {
     let title: String
     let author: String
-    var microReview: String
-    var readMe: Bool
+    @Published var microReview: String
+    @Published var readMe: Bool
 
     init(
         title: String = "Title",
@@ -26,4 +25,17 @@ struct Book: Hashable {
         self.readMe = readMe
     }
 }
+
+extension Book: Hashable, Identifiable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+extension Book: Equatable {
+    static func == (lhs: Book, rhs: Book) -> Bool {
+        lhs === rhs
+    }
+}
+
  

@@ -13,7 +13,7 @@ struct Library {
   /// An in-memory cache of the manually-sorted books.
   private var booksCache: [Book] = [
     .init(title: "Ein Neues Land", author: "Shaun Tan"),
-    .init(title: "Bosch", author: "Laurinda Dixon"),
+    .init(title: "Bosch", author: "Laurinda Dixon", microReview: "Earthily Delightful"),
     .init(title: "Dare to Lead", author: "Brené Brown"),
     .init(title: "Blasting for Optimum Health Recipe Book", author: "NutriBullet"),
     .init(title: "Drinking with the Saints", author: "Michael P. Foley"),
