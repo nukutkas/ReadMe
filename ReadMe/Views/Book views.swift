@@ -73,6 +73,15 @@ extension Book.Image {
     }
 }
 
+extension View {
+    var previewedInAllColorSchemes: some View {
+        ForEach(
+            ColorScheme.allCases, id: \.self,
+            content: preferredColorScheme
+        )
+    }
+}
+
 struct Book_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
@@ -81,5 +90,6 @@ struct Book_Previews: PreviewProvider {
             Book.Image(title: "")
             Book.Image(title: "🏺")
         }
+        .previewedInAllColorSchemes
     }
 }
