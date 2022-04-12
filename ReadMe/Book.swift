@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Book {
+struct Book: Hashable {
     let title: String
     let author: String
 

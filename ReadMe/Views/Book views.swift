@@ -26,6 +26,7 @@ struct TitleAndAuthorStack: View {
 
 extension Book {
     struct Image: View {
+        let image: SwiftUI.Image?
         let title: String
         var size: CGFloat?
         
@@ -56,9 +57,17 @@ extension Image {
     }
 }
 
+extension Book.Image {
+    ///A preview image.
+    init(titleL: String) {
+        self.init(image: nil, title: title)
+    }
+}
+
 struct Book_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
+            TitleAndAuthorStack(book: .init(), titleFont: .title, authorFont: .title2)
             Book.Image(title: Book().title)
             Book.Image(title: "")
             Book.Image(title: "🏺")
