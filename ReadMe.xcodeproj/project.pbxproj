@@ -65,7 +65,6 @@
 				E50ECE2728031357003C6929 /* Library.swift */,
 				E5DDFEBD2800B99C00367605 /* Views */,
 				E5DDFEBB2800B86500367605 /* Book.swift */,
-				E5ECA77528055199004FDD99 /* PHPickerViewController.View.swift */,
 				E5DDFEB12800B3E400367605 /* Assets.xcassets */,
 				E5DDFEB32800B3E400367605 /* Preview Content */,
 			);
@@ -86,6 +85,7 @@
 				E5DDFEAF2800B3DF00367605 /* ContentView.swift */,
 				E5DDFEBE2800B9CC00367605 /* Book views.swift */,
 				E50ECE2928031865003C6929 /* DetailView.swift */,
+				E5ECA77528055199004FDD99 /* PHPickerViewController.View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

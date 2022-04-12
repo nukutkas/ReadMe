@@ -29,18 +29,27 @@ extension Book {
         let image: SwiftUI.Image?
         let title: String
         var size: CGFloat?
+        let cornerRadius: CGFloat
         
         var body: some View {
-            let symbol =
-            SwiftUI.Image(title: title)
-            ?? .init(systemName: "book")
-            
-            symbol
-                .resizable()
-                .scaledToFit()
-                .frame(width: size, height: size)
-                .font(Font.title.weight(.light))
-                .foregroundColor(.secondary.opacity(0.5))
+            if let image = image {
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: size, height: size)
+                    .cornerRadius(cornerRadius)
+            } else {
+                let symbol =
+                SwiftUI.Image(title: title)
+                ?? .init(systemName: "book")
+                
+                symbol
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: size, height: size)
+                    .font(Font.title.weight(.light))
+                    .foregroundColor(.secondary.opacity(0.5))
+            }
         }
     }
 }
@@ -59,8 +68,8 @@ extension Image {
 
 extension Book.Image {
     ///A preview image.
-    init(titleL: String) {
-        self.init(image: nil, title: title)
+    init(title: String) {
+        self.init(image: nil, title: title, cornerRadius: .init())
     }
 }
 
