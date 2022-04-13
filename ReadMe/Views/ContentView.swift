@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var addingNewBook = false
-    @State var library = Library()
+    @EnvironmentObject var library: Library
     var body: some View {
         NavigationView {
             List {
@@ -30,7 +30,7 @@ struct ContentView: View {
                 .sheet(isPresented: $addingNewBook, content: NewBookView.init)
                 
                 ForEach(library.sortedBooks) { book in
-                    BookRow(book: book, image: $library.images[book])
+                    BookRow(book: book)
                 }
             }
             .navigationTitle("My library")
@@ -40,15 +40,23 @@ struct ContentView: View {
 
 struct BookRow: View {
     @ObservedObject var book: Book
-    @Binding var image: Image?
+    @EnvironmentObject var library: Library
     
     var body: some View {
-        NavigationLink(destination: DetailView(book: book, image: $image)) {
+        NavigationLink(destination: DetailView(book: book)) {
             HStack {
-                Book.Image(image: image,title: book.title, size: 80, cornerRadius: 12)
+                Book.Image(
+                    image: library.images[book],
+                    title: book.title,
+                    size: 80,
+                    cornerRadius: 12
+                )
                     .scaledToFit()
                 VStack(alignment: .leading) {
-                    TitleAndAuthorStack(book: book, titleFont: .title2, authorFont: .title3)
+                    TitleAndAuthorStack(
+                        book: book,
+                        titleFont: .title2,
+                        authorFont: .title3)
                     
                     if !book.microReview.isEmpty {
                         Spacer()
@@ -70,6 +78,8 @@ struct BookRow: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Library())
+            .previewedInAllColorSchemes
     }
 }
 
