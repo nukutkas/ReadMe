@@ -122,7 +122,7 @@ private struct SectionView: View {
                     library.deleteBooks(atOffsets: indexSet, section: section)
                 }
                 .onMove { indexes, newOffset in
-                    <#code#>
+                    library.moveBooks(oldOffsets: indexes, newOffset: newOffset, section: section)
                 }
                 .labelStyle(.iconOnly)
             } header: {
