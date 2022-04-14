@@ -102,9 +102,17 @@ private struct SectionView: View {
                                 ? Label("Finished", systemImage: "bookmark.slash")
                                 : Label("Read Me!", systemImage: "bookmark")
                             }
-
+                            .tint(.accentColor)
+                        }
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                // TODO: Delete book
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
                         }
                 }
+                .labelStyle(.iconOnly)
             } header: {
                 ZStack {
                     Image("BookTexture")
