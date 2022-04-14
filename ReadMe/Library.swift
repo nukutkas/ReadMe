@@ -55,6 +55,10 @@ class Library: ObservableObject {
         }
     }
     
+    func moveBooks(oldOffsets: IndexSet, newOffset: Int, section: Section) {
+        sortedBooks[section]?.move(fromOffsets: oldOffsets, toOffset: newOffset)
+    }
+    
     /// An in-memory cache of the manually-sorted books.
     private var booksCache: [Book] = [
         .init(title: "Ein Neues Land", author: "Shaun Tan"),

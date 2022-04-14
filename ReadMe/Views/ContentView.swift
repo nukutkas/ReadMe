@@ -121,6 +121,9 @@ private struct SectionView: View {
                 .onDelete { indexSet in
                     library.deleteBooks(atOffsets: indexSet, section: section)
                 }
+                .onMove { indexes, newOffset in
+                    <#code#>
+                }
                 .labelStyle(.iconOnly)
             } header: {
                 ZStack {
