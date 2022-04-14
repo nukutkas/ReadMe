@@ -106,11 +106,19 @@ private struct SectionView: View {
                         }
                         .swipeActions(edge: .trailing) {
                             Button(role: .destructive) {
-                                // TODO: Delete book
+                                guard let index = books.firstIndex(where: { $0.id == book.id })
+                                else { return }
+                                
+                                withAnimation {
+                                    library.deleteBooks(atOffsets: .init(integer: index), section: section)
+                                }
                             } label: {
                                 Label("Delete", systemImage: "trash")
                             }
                         }
+                }
+                .onDelete { indexSet in
+                    library.deleteBooks(atOffsets: indexSet, section: section)
                 }
                 .labelStyle(.iconOnly)
             } header: {
