@@ -20,6 +20,15 @@ class Library: ObservableObject {
       })
   }
     
+    func sortBooks() {
+        booksCache =
+        sortedBooks
+            .sorted { $1.key == .finished }
+            .flatMap { $0.value }
+        
+        objectWillChange.send()
+    }
+    
     /// Adds a new book at the start of the llibrary's manually-sorted books.
     func addNewBook(_ book: Book, image: Image?) {
         booksCache.insert(book, at: 0)
