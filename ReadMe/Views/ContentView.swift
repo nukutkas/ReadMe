@@ -91,6 +91,19 @@ private struct SectionView: View {
             SwiftUI.Section {
                 ForEach(books) { book in
                     BookRow(book: book)
+                        .swipeActions(edge: .leading) {
+                            Button {
+                                withAnimation {
+                                    book.readMe.toggle()
+                                    library.sortBooks()
+                                }
+                            } label: {
+                                book.readMe
+                                ? Label("Finished", systemImage: "bookmark.slash")
+                                : Label("Read Me!", systemImage: "bookmark")
+                            }
+
+                        }
                 }
             } header: {
                 ZStack {
